@@ -1,0 +1,12 @@
+/**
+ * layout.css
+ *
+ * Sections, major components and containing elements
+ * 
+ * - Grid systems can have their own stylesheet within layout
+ * - Mostly use single class names
+ * - No use of ID's
+ * - No use of !important
+ * - Prefix layout classes with l-
+ *
+ */

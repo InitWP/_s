@@ -1,0 +1,15 @@
+/**
+ * modules.css (Keep this file empy, it will not be included)
+ *
+ * Modules sit inside Layout components or other Modules.
+ *
+ * - Each module has its own stylesheet
+ * - A module should be designed to exist as a standalone component
+ * - Use class names only
+ * - Use descendent or child selectors to only affect surrounding elements (let styles affect the module only and not cascade/bleed out to other parts)
+ * - No use of ID's
+ * - No use of element selectors
+ * 	- Only include a selector that includes semantics (a span or div holds none, a class does)
+ * - No use of !important
+ *
+ */
