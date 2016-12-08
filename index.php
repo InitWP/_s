@@ -14,15 +14,15 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div id="primary" class="l-primaryContent">
+		<main id="main" class="l-main" role="main">
 
 		<?php
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				<header class="pageHeader">
+					<h1 class="pageHeader--title screenReaderText"><?php single_post_title(); ?></h1>
 				</header>
 
 			<?php
