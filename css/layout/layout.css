@@ -2,8 +2,9 @@
  * layout.css
  *
  * Sections, major components and containing elements
- * 
- * - Grid systems can have their own stylesheet within layout
+ * Layouts specify widths and margins
+ *
+ * - Grid systems have their own stylesheet in layout
  * - Mostly use single class names
  * - No use of ID's
  * - No use of !important

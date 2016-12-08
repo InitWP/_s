@@ -5,6 +5,7 @@
  *
  * - Each module has its own stylesheet
  * - A module should be designed to exist as a standalone component
+ * - Modules expand to fill Layout
  * - Use class names only
  * - Use descendent or child selectors to only affect surrounding elements (let styles affect the module only and not cascade/bleed out to other parts)
  * - No use of ID's
@@ -12,4 +13,8 @@
  * 	- Only include a selector that includes semantics (a span or div holds none, a class does)
  * - No use of !important
  *
+ * - Naming convention:
+ * 		- Root module uses camelCase .moduleName: .btn | .listView | .modal
+ * 		- Submodules / variations on the root module use .moduleName-subModule: .btn-large | .btn-default | .listView-large | .modal-large
+ *		- Subcomponents use .moduleName--subComponent: .modal--header | .modal--body | .modal--footer
  */
