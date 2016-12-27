@@ -14,14 +14,15 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="<?php echo bloginfo('template_url') ?>/favicon.ico" />
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skipLink h-screenReaderText" href="#content"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
+<div id="page" class="l-site">
+	<a class="skipLink screenReaderText" href="#content"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
 	<header id="masthead" class="l-header" role="banner">
 		<div class="branding">
@@ -41,8 +42,8 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="mainNavigation" role="navigation">
-			<button class="mainNavigation--toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', '_s' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+			<button class="mainNavigation--toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', '_s' ); ?></button>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container' => '', 'menu_class' => 'mainNavigation--menu' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

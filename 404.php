@@ -14,11 +14,11 @@ get_header(); ?>
 
 			<article class="error404 entry">
 				<header class="entry--header">
-					<h1><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', '_s' ); ?></h1>
+					<h1><?php esc_html_e( 'Oeps! De pagina kan niet worden gevonden.', 'hethuisvoorpsychotherapie' ); ?></h1>
 				</header><!-- .entry--header -->
 
 				<div class="entry--content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', '_s' ); ?></p>
+					<p><?php esc_html_e( 'Het lijkt erop dat er niets op deze locatie te vinden is. Misschien kan een zoekactie helpen: ', 'hethuisvoorpsychotherapie' ); ?></p>
 
 					<?php
 						get_search_form();

@@ -1,0 +1,124 @@
+/**
+ * navigation.css
+ *
+ * Usually primary + secondary navigation
+ *
+**/
+
+.mainNavigation {
+
+}
+
+/***************************************** Menu toggle button */
+
+.mainNavigation--toggle {
+	background: #fff;
+	border: 1px solid #000;
+	height: 44px;
+	margin: 0;
+	padding-left: 9px;
+	position: absolute;
+	right: 0;
+	text-indent: -99999px;
+	top: -87px;
+	width: 44px;
+}
+.entry .mainNavigation--toggle  {
+	right: 10px;
+	top: 10px;
+}
+
+.mainNavigation--toggle:after {
+	box-shadow: 0 10px 0 1px #000, 0 16px 0 1px #000, 0 22px 0 1px #000;
+	content: "";
+	display: block;
+	height: 0;
+	position: absolute;
+	right: 13px;
+	top: 6px;
+	width: 16px;
+}
+
+/***************************************** Toggled navigation */
+/* hide menu */
+.mainNavigation--menu {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* show menu on toggle */
+.toggled .mainNavigation--menu {
+	background-color: #fff;
+	box-shadow: 2px 3px 10px rgba(0,0,0,.2);
+	display: block;
+	position: absolute;
+	width: 100%;
+}
+
+.entry .toggled .mainNavigation--menu  {
+	top: 54px;
+}
+
+.toggled .mainNavigation--menu > li {
+	border-top: 1px solid #ccc;
+	position: relative;
+}
+
+.toggled .mainNavigation--menu > li > a {
+	display: block;
+	padding: 0.8em 15px;
+}
+
+.toggled .mainNavigation--menu > li > a:hover {
+	color: #6f6f6e;
+}
+
+@media screen and (min-width: 768px) {
+	.mainNavigation {
+
+	}
+
+	/* Show menu and hide toggle */
+	.mainNavigation--menu {
+		display: block;
+	}
+	.mainNavigation--toggle {
+		display: none;
+	}
+
+	.mainNavigation--menu,
+	.mainNavigation--menu > li {
+		list-style: none;
+		text-align: right;
+	}
+	.mainNavigation--menu li a {
+		background: url(../../img/mainNav-bullet.png) no-repeat 100% -29px;
+		color: #6f6f6e;
+		font-size: 1.2em;
+		font-weight: bold;
+		padding: 0 30px 0 0;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+	.mainNavigation--menu li a:hover,
+	.mainNavigation--menu li.current-menu-item a {
+		background: url(../../img/mainNav-bullet.png) no-repeat 100% 0px;
+		color: #000;
+	}
+
+	.coloredBackground .mainNavigation--menu li a:hover,
+	.coloredBackground .mainNavigation--menu li.current-menu-item a {
+		background: url(../../img/mainNav-bullet_colouredBG.png) no-repeat 100% 0px;
+		color: #ffffff;
+	}
+
+}
+
+@media screen and (min-width: 1024px) {
+
+
+
+
+}

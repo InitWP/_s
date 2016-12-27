@@ -1,0 +1,25 @@
+/**
+ * branding.css
+ *
+ * Usually logo and byline
+ *
+**/
+
+.branding--title > a {
+	background: url("../../img/logo-temp.gif") no-repeat 50% 0;
+	background-size: contain;
+	display: block;
+	height: 100px;
+	max-width: 195px;
+	text-indent: -9999px;
+}
+
+@media screen and (min-width: 450px) {
+	.branding--title > a {
+		height: 130px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+
+}

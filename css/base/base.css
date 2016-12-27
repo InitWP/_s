@@ -1,9 +1,9 @@
 /**
  * base.css
- * Elements and pseude-elements only
+ * Elements and pseudo-elements only
  * No use of !important
  *
- */
+**/
 
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -76,16 +76,12 @@ abbr[title] {
 
 b,
 strong {
+	color:#6f6f6e;
 	font-weight: bold;
 }
 
 dfn {
 	font-style: italic;
-}
-
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
 }
 
 mark {
@@ -251,10 +247,34 @@ h4,
 h5,
 h6 {
 	clear: both;
+	text-transform: uppercase;
+}
+
+h1 {
+	color: #ffd800;
+	font-size: 1.9em;
+	margin-bottom:10px;
+}
+
+h2 {
+	color: #6f6f6e;
+	font-size: 1.3em;
+	margin-top: 0;
+}
+
+h3 {
+	color: #6f6f6e;
+	font-size: 1.1em;
+	text-transform: none;
+}
+
+h4, h5, h6 {
+	color: #6f6f6e;
+	font-size: 1em;
 }
 
 p {
-	margin-bottom: 1.5em;
+	margin: 0 0 1.5em;
 }
 
 dfn,
@@ -347,7 +367,7 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 1.5em 0;
 }
 
 ul {
@@ -393,18 +413,10 @@ a {
 	color: royalblue;
 }
 
-a:visited {
-	color: purple;
-}
-
 a:hover,
 a:focus,
 a:active {
 	color: midnightblue;
-}
-
-a:focus {
-	outline: thin dotted;
 }
 
 a:hover,

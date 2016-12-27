@@ -17,4 +17,4 @@
  * 		- Root module uses camelCase .moduleName: .btn | .listView | .modal
  * 		- Submodules / variations on the root module use .moduleName-subModule: .btn-large | .btn-default | .listView-large | .modal-large
  *		- Subcomponents use .moduleName--subComponent: .modal--header | .modal--body | .modal--footer
- */
+**/

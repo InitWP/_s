@@ -10,4 +10,21 @@
  * - No use of !important
  * - Prefix layout classes with l-
  *
- */
+**/
+
+.l-site {
+	margin: 0 auto;
+	padding: 30px 10px 0 10px;
+	position: relative;
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+	.l-site {
+		max-width: 1170px;
+	}
+
+}

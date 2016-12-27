@@ -59,11 +59,6 @@ function _s_setup() {
 		'caption',
 	) );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( '_s_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
 }
 endif;
 add_action( 'after_setup_theme', '_s_setup' );
@@ -99,25 +94,49 @@ function _s_widgets_init() {
 add_action( 'widgets_init', '_s_widgets_init' );
 
 /**
+ * Remove unused WP additions to HEAD
+ *
+ */
+// Emoji
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
+add_filter( 'emoji_svg_url', '__return_false' );
+// Bloat
+remove_action('wp_head', 'rsd_link'); //removes EditURI/RSD (Really Simple Discovery) link.
+remove_action('wp_head', 'wlwmanifest_link'); //removes wlwmanifest (Windows Live Writer) link.
+remove_action('wp_head', 'wp_generator'); //removes meta name generator.
+remove_action('wp_head', 'wp_shortlink_wp_head'); //removes shortlink.
+remove_action('wp_head', 'feed_links_extra', 3 );  //removes comments feed.
+
+/**
  * Enqueue scripts and styles.
  */
 function _s_scripts() {
 	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_style( '_s-base', get_template_directory_uri() . '/css/base/base.css' );
+	wp_enqueue_style( '_s-layout', get_template_directory_uri() . '/css/layout/layout.css' );
+	wp_enqueue_style( '_s-grid', get_template_directory_uri() . '/css/layout/grid.css' );
 
-	wp_enqueue_script( '_s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_style( '_s-module-branding', get_template_directory_uri() . '/css/modules/branding.css' );
+	wp_enqueue_style( '_s-module-navigation', get_template_directory_uri() . '/css/modules/navigation.css' );
+	wp_enqueue_style( '_s-module-entry', get_template_directory_uri() . '/css/modules/entry.css' );
+	wp_enqueue_style( '_s-module-slider', get_template_directory_uri() . '/css/modules/slider.css' );
+	wp_enqueue_style( '_s-module-quote', get_template_directory_uri() . '/css/modules/quote.css' );
+	wp_enqueue_style( '_s-module-button', get_template_directory_uri() . '/css/modules/button.css' );
+	wp_enqueue_style( '_s-module-profile', get_template_directory_uri() . '/css/modules/profile.css' );
+	wp_enqueue_style( '_s-module-modal', get_template_directory_uri() . '/css/modules/modal.css' );
+	wp_enqueue_style( '_s-module-form', get_template_directory_uri() . '/css/modules/form.css' );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	wp_enqueue_style( '_s-helpers', get_template_directory_uri() . '/css/helpers.css' );
+
+	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20161227', true );
+	wp_enqueue_script( '_s-scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '20161227', true);
+
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -125,16 +144,32 @@ require get_template_directory() . '/inc/custom-header.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * Custom functions that act independently of the theme templates.
+ * Remove unused admin menu-items
  */
-require get_template_directory() . '/inc/extras.php';
+function hhvp_remove_admin_menu_items() {
+
+	//remove_menu_page( 'index.php' );                  //Dashboard
+	remove_menu_page( 'edit.php' );                   //Posts
+	//remove_menu_page( 'upload.php' );                 //Media
+	//remove_menu_page( 'edit.php?post_type=page' );    //Pages
+	remove_menu_page( 'edit-comments.php' );          //Comments
+	//remove_menu_page( 'themes.php' );                 //Appearance
+	//remove_menu_page( 'plugins.php' );                //Plugins
+	//remove_menu_page( 'users.php' );                  //Users
+	//remove_menu_page( 'tools.php' );                  //Tools
+	//remove_menu_page( 'options-general.php' );        //Settings
+
+}
+add_action( 'admin_menu', 'hhvp_remove_admin_menu_items' );
 
 /**
- * Customizer additions.
+ * Remove most menu classes en ids
+ * Only current-menu-item remains
+ * http://wpsnipp.com/index.php/functions-php/remove-every-class-and-id-from-the-wp_nav_menu/
  */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
+add_filter('nav_menu_css_class', '_s_css_attributes_filter', 100, 1);
+add_filter('nav_menu_item_id', '_s_css_attributes_filter', 100, 1);
+add_filter('page_css_class', '_s_css_attributes_filter', 100, 1);
+function _s_css_attributes_filter($var) {
+	return is_array($var) ? array_intersect($var, array('current-menu-item')) : '';
+}

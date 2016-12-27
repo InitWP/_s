@@ -1,0 +1,19 @@
+/**
+ * entry.css
+ *
+ * Styles related to a page entry (not its content!)
+ *
+**/
+
+.entry {
+	padding: 20px 20px 40px;
+	position: relative;
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+
+}
