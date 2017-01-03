@@ -1,7 +1,7 @@
 var _s_scripts = (function ($) {
 
-
-	$(document).ready(function () {
+	// On DOM ready
+	$(function () {
 
 	});
 

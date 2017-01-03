@@ -21,7 +21,7 @@
 .slider--pager li {
 	cursor: pointer;
 	float: left;
-	text-indent: -9999px;
+	text-indent: -99999px;
 	width: 28px;
 }
 
@@ -30,6 +30,7 @@
 }
 
 @media screen and (min-width: 768px) {
+
 }
 
 @media screen and (min-width: 1024px) {

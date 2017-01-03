@@ -1,7 +1,7 @@
 /**
  * navigation.css
  *
- * Usually primary + secondary navigation
+ * Usually primary / secondary navigation
  *
 **/
 
@@ -94,7 +94,6 @@
 		text-align: right;
 	}
 	.mainNavigation--menu li a {
-		background: url(../../img/mainNav-bullet.png) no-repeat 100% -29px;
 		color: #6f6f6e;
 		font-size: 1.2em;
 		font-weight: bold;
@@ -104,21 +103,16 @@
 	}
 	.mainNavigation--menu li a:hover,
 	.mainNavigation--menu li.current-menu-item a {
-		background: url(../../img/mainNav-bullet.png) no-repeat 100% 0px;
 		color: #000;
 	}
 
 	.coloredBackground .mainNavigation--menu li a:hover,
 	.coloredBackground .mainNavigation--menu li.current-menu-item a {
-		background: url(../../img/mainNav-bullet_colouredBG.png) no-repeat 100% 0px;
 		color: #ffffff;
 	}
 
 }
 
 @media screen and (min-width: 1024px) {
-
-
-
 
 }
