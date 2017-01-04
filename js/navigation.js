@@ -4,7 +4,7 @@
  * Handles toggling the navigation menu for small screens and enables TAB key
  * navigation support for dropdown menus.
  */
-var hhvpNavigation = (function ($) {
+var _sNavigation = (function ($) {
 
 	var container, button, menu, links, subMenus;
 

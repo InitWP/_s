@@ -1,8 +1,8 @@
-var _s_scripts = (function ($) {
+var _sScripts = (function ($) {
 
 	// On DOM ready
 	$(function () {
-
+		_sNavigation.init();
 	});
 
 	return {

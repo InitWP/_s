@@ -13,7 +13,7 @@
 
 	</div><!-- #content -->
 
-	<footer id="footer" class="l-footer" role="contentinfo">
+	<footer id="footer" class="l-footer">
 
 	</footer><!-- #colophon -->
 </div><!-- #page -->

@@ -15,12 +15,10 @@
 	background: #fff;
 	border: 1px solid #000;
 	height: 44px;
-	margin: 0;
-	padding-left: 9px;
 	position: absolute;
-	right: 0;
+	right: 10px;
 	text-indent: -99999px;
-	top: -87px;
+	top: 10px;
 	width: 44px;
 }
 .entry .mainNavigation--toggle  {
@@ -91,13 +89,13 @@
 	.mainNavigation--menu,
 	.mainNavigation--menu > li {
 		list-style: none;
-		text-align: right;
+		display: inline-block;
 	}
 	.mainNavigation--menu li a {
 		color: #6f6f6e;
-		font-size: 1.2em;
+		font-size: 1em;
 		font-weight: bold;
-		padding: 0 30px 0 0;
+		padding: 0 20px 0;
 		text-decoration: none;
 		text-transform: uppercase;
 	}
