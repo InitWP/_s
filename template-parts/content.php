@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s
+ * @package slnm
  */
 
 ?>
@@ -20,7 +20,7 @@
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry--meta">
-			<?php _s_posted_on(); ?>
+			<?php slnm_posted_on(); ?>
 		</div><!-- .entry--meta -->
 		<?php
 		endif; ?>
@@ -30,18 +30,18 @@
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="metaNav">&rarr;</span>', '_s' ), array( 'span' => array( 'class' => array() ) ) ),
+				wp_kses( __( 'Continue reading %s <span class="metaNav">&rarr;</span>', 'slnm' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screenReaderText">"', '"</span>', false )
 			) );
 
 			wp_link_pages( array(
-				'before' => '<div class="pageLinks">' . esc_html__( 'Pages:', '_s' ),
+				'before' => '<div class="pageLinks">' . esc_html__( 'Pages:', 'slnm' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry--content -->
 
 	<footer class="entry--footer">
-		<?php _s_entry_footer(); ?>
+		<?php slnm_entry_footer(); ?>
 	</footer><!-- .entry--footer -->
 </article><!-- #post-## -->

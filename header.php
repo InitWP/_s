@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package _s
+ * @package slnm
  */
 
 ?><!DOCTYPE html>
@@ -22,7 +22,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="l-site">
-	<a class="skipLink screenReaderText" href="#content"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
+	<a class="skipLink screenReaderText" href="#content"><?php esc_html_e( 'Skip to content', 'slnm' ); ?></a>
 
 	<header id="masthead" class="l-header" role="banner">
 		<div class="branding">
@@ -42,7 +42,7 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="mainNavigation" role="navigation">
-			<button class="mainNavigation--toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', '_s' ); ?></button>
+			<button class="mainNavigation--toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'slnm' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container' => '', 'menu_class' => 'mainNavigation--menu' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

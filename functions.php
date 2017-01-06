@@ -1,13 +1,13 @@
 <?php
 /**
- * _s functions and definitions.
+ * slnm functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package _s
+ * @package slnm
  */
 
-if ( ! function_exists( '_s_setup' ) ) :
+if ( ! function_exists( 'slnm_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -15,14 +15,14 @@ if ( ! function_exists( '_s_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function _s_setup() {
+function slnm_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on _s, use a find and replace
-	 * to change '_s' to the name of your theme in all the template files.
+	 * If you're building a theme based on slnm, use a find and replace
+	 * to change 'slnm' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( '_s', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'slnm', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -44,7 +44,7 @@ function _s_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', '_s' ),
+		'primary' => esc_html__( 'Primary', 'slnm' ),
 	) );
 
 	/*
@@ -61,7 +61,7 @@ function _s_setup() {
 
 }
 endif;
-add_action( 'after_setup_theme', '_s_setup' );
+add_action( 'after_setup_theme', 'slnm_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -70,28 +70,28 @@ add_action( 'after_setup_theme', '_s_setup' );
  *
  * @global int $content_width
  */
-function _s_content_width() {
-	$GLOBALS['content_width'] = apply_filters( '_s_content_width', 640 );
+function slnm_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'slnm_content_width', 640 );
 }
-add_action( 'after_setup_theme', '_s_content_width', 0 );
+add_action( 'after_setup_theme', 'slnm_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function _s_widgets_init() {
+function slnm_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', '_s' ),
+		'name'          => esc_html__( 'Sidebar', 'slnm' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', '_s' ),
+		'description'   => esc_html__( 'Add widgets here.', 'slnm' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', '_s_widgets_init' );
+add_action( 'widgets_init', 'slnm_widgets_init' );
 
 /**
  * Remove unused WP additions to HEAD
@@ -113,30 +113,30 @@ remove_action('wp_head', 'feed_links_extra', 3 );  //removes comments feed.
 /**
  * Enqueue scripts and styles.
  */
-function _s_scripts() {
-	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
+function slnm_scripts() {
+	wp_enqueue_style( 'slnm-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( '_s-base', get_template_directory_uri() . '/css/base/base.css' );
-	wp_enqueue_style( '_s-layout', get_template_directory_uri() . '/css/layout/layout.css' );
-	wp_enqueue_style( '_s-grid', get_template_directory_uri() . '/css/layout/grid.css' );
+	wp_enqueue_style( 'slnm-base', get_template_directory_uri() . '/css/base/base.css' );
+	wp_enqueue_style( 'slnm-layout', get_template_directory_uri() . '/css/layout/layout.css' );
+	wp_enqueue_style( 'slnm-grid', get_template_directory_uri() . '/css/layout/grid.css' );
 
-	wp_enqueue_style( '_s-module-branding', get_template_directory_uri() . '/css/modules/branding.css' );
-	wp_enqueue_style( '_s-module-navigation', get_template_directory_uri() . '/css/modules/navigation.css' );
-	wp_enqueue_style( '_s-module-entry', get_template_directory_uri() . '/css/modules/entry.css' );
-	wp_enqueue_style( '_s-module-slider', get_template_directory_uri() . '/css/modules/slider.css' );
-	wp_enqueue_style( '_s-module-quote', get_template_directory_uri() . '/css/modules/quote.css' );
-	wp_enqueue_style( '_s-module-button', get_template_directory_uri() . '/css/modules/button.css' );
-	wp_enqueue_style( '_s-module-profile', get_template_directory_uri() . '/css/modules/profile.css' );
-	wp_enqueue_style( '_s-module-modal', get_template_directory_uri() . '/css/modules/modal.css' );
-	wp_enqueue_style( '_s-module-form', get_template_directory_uri() . '/css/modules/form.css' );
+	wp_enqueue_style( 'slnm-module-branding', get_template_directory_uri() . '/css/modules/branding.css' );
+	wp_enqueue_style( 'slnm-module-navigation', get_template_directory_uri() . '/css/modules/navigation.css' );
+	wp_enqueue_style( 'slnm-module-entry', get_template_directory_uri() . '/css/modules/entry.css' );
+	wp_enqueue_style( 'slnm-module-slider', get_template_directory_uri() . '/css/modules/slider.css' );
+	wp_enqueue_style( 'slnm-module-quote', get_template_directory_uri() . '/css/modules/quote.css' );
+	wp_enqueue_style( 'slnm-module-button', get_template_directory_uri() . '/css/modules/button.css' );
+	wp_enqueue_style( 'slnm-module-profile', get_template_directory_uri() . '/css/modules/profile.css' );
+	wp_enqueue_style( 'slnm-module-modal', get_template_directory_uri() . '/css/modules/modal.css' );
+	wp_enqueue_style( 'slnm-module-form', get_template_directory_uri() . '/css/modules/form.css' );
 
-	wp_enqueue_style( '_s-helpers', get_template_directory_uri() . '/css/helpers.css' );
+	wp_enqueue_style( 'slnm-helpers', get_template_directory_uri() . '/css/helpers.css' );
 
-	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20161227', true );
-	wp_enqueue_script( '_s-scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '20161227', true);
+	wp_enqueue_script( 'slnm-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20161227', true );
+	wp_enqueue_script( 'slnm-scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '20161227', true);
 
 }
-add_action( 'wp_enqueue_scripts', '_s_scripts' );
+add_action( 'wp_enqueue_scripts', 'slnm_scripts' );
 
 /**
  * Custom template tags for this theme.
@@ -167,9 +167,9 @@ add_action( 'admin_menu', 'hhvp_remove_admin_menu_items' );
  * Only current-menu-item remains
  * http://wpsnipp.com/index.php/functions-php/remove-every-class-and-id-from-the-wp_nav_menu/
  */
-add_filter('nav_menu_css_class', '_s_css_attributes_filter', 100, 1);
-add_filter('nav_menu_item_id', '_s_css_attributes_filter', 100, 1);
-add_filter('page_css_class', '_s_css_attributes_filter', 100, 1);
-function _s_css_attributes_filter($var) {
+add_filter('nav_menu_css_class', 'slnm_css_attributes_filter', 100, 1);
+add_filter('nav_menu_item_id', 'slnm_css_attributes_filter', 100, 1);
+add_filter('page_css_class', 'slnm_css_attributes_filter', 100, 1);
+function slnm_css_attributes_filter($var) {
 	return is_array($var) ? array_intersect($var, array('current-menu-item')) : '';
 }
