@@ -5,8 +5,21 @@
  *
 **/
 
+/* position (mobile) navigation. Omitting this results in slow closing of mobile menu on button click (omitting triggers a reflow) */
 .mainNavigation {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+}
 
+/* hide (sub)menu(s) */
+.mainNavigation--menu,
+.mainNavigation--subMenu {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 /***************************************** Menu toggle button */
@@ -17,13 +30,8 @@
 	height: 44px;
 	position: absolute;
 	right: 10px;
-	text-indent: -99999px;
 	top: 10px;
 	width: 44px;
-}
-.entry .mainNavigation--toggle  {
-	right: 10px;
-	top: 10px;
 }
 
 .mainNavigation--toggle:after {
@@ -37,76 +45,135 @@
 	width: 16px;
 }
 
-/***************************************** Toggled navigation */
-/* hide menu */
-.mainNavigation--menu {
-	display: none;
-	list-style: none;
-	margin: 0;
-	padding: 0;
+.mainNavigation--toggle.is-active:after {
+	box-shadow: none;
+	content: "\2715";
+	font-size: 24px;
+	line-height: 33px;
+	left: 12px;
 }
 
-/* show menu on toggle */
-.toggled .mainNavigation--menu {
+/***************************************** Main Navigation */
+
+.mainNavigation--menu {
 	background-color: #fff;
 	box-shadow: 2px 3px 10px rgba(0,0,0,.2);
-	display: block;
 	position: absolute;
+	top: 63px;
 	width: 100%;
+	z-index: 100;
 }
 
-.entry .toggled .mainNavigation--menu  {
-	top: 54px;
-}
-
-.toggled .mainNavigation--menu > li {
+.mainNavigation--menuItem {
 	border-top: 1px solid #ccc;
 	position: relative;
 }
 
-.toggled .mainNavigation--menu > li > a {
+.mainNavigation--menuItem a {
 	display: block;
-	padding: 0.8em 15px;
+	padding: 12px 15px;
 }
 
-.toggled .mainNavigation--menu > li > a:hover {
-	color: #6f6f6e;
+/***************************************** is-active navigation */
+
+/* show menu on toggle */
+.mainNavigation--menu.is-active,
+.mainNavigation--subMenu.is-active {
+	display: block;
 }
+
+/***************************************** Submenu toggle button */
+.mainNavigation--subMenuToggle {
+	background: #fff;
+	border: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 42px;
+}
+
+.mainNavigation--subMenuToggle:after {
+	color: #000;
+	content: "\25BE";
+	font-size: 24px;
+	line-height: 43px;
+	width: 42px;
+}
+
+.mainNavigation--subMenuToggle:focus {
+	background-color: #eaeaea;
+	background-color: rgba(51, 51, 51, 0.1);
+	outline: 1px solid #c1c1c1;
+	outline: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+.mainNavigation--subMenuToggle.is-active:after {
+	content: "\25B2";
+	font-size: 14px;
+}
+
+/***************************************** Submenu */
+.mainNavigation--subMenu {
+	padding-left: 15px;
+}
+
+.mainNavigation--subMenu--menuItem {
+	border-top: 1px solid #ccc;
+}
+
+/******************************************************************************* Media Queries */
 
 @media screen and (min-width: 768px) {
 	.mainNavigation {
-
+		position: static;
 	}
 
-	/* Show menu and hide toggle */
-	.mainNavigation--menu {
-		display: block;
-	}
 	.mainNavigation--toggle {
 		display: none;
 	}
 
-	.mainNavigation--menu,
-	.mainNavigation--menu > li {
-		list-style: none;
-		display: inline-block;
-	}
-	.mainNavigation--menu li a {
-		color: #6f6f6e;
-		font-size: 1em;
-		font-weight: bold;
-		padding: 0 20px 0;
-		text-decoration: none;
-		text-transform: uppercase;
-	}
-	.mainNavigation--menu li a:hover,
-	.mainNavigation--menu li.current-menu-item a {
-		color: #000;
+	.mainNavigation--menu {
+		box-shadow: none;
+		display: block;
+		position: static;
 	}
 
-	.coloredBackground .mainNavigation--menu li a:hover,
-	.coloredBackground .mainNavigation--menu li.current-menu-item a {
-		color: #ffffff;
+	.mainNavigation--menuItem {
+		border: 0;
+		float: left;
+	}
+
+	.mainNavigation--menuItem a {
+		float: left;
+
+	}
+	.mainNavigation--menuItem a:hover,
+	.mainNavigation--menuItem.is-active a {
+
+	}
+
+	.mainNavigation--subMenuToggle {
+		float: right;
+		position: static;
+	}
+
+	.mainNavigation--subMenuToggle:focus {
+		background: none;
+		outline: none;
+	}
+
+	.mainNavigation--menuItem:hover .mainNavigation--subMenu,
+	.mainNavigation--subMenu.is-active {
+		background: #fff;
+		display: block;
+		min-width: 200px;
+		position: absolute;
+		top: 47px;
+		z-index: 100;
+	}
+
+	.mainNavigation--menuItem:last-child .mainNavigation--subMenu {
+		right: 0;
 	}
 
 }

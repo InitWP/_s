@@ -138,6 +138,12 @@ function slnm_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'slnm_scripts' );
 
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/navigation.php';
+
 /**
  * Custom template tags for this theme.
  */
@@ -161,15 +167,3 @@ function hhvp_remove_admin_menu_items() {
 
 }
 add_action( 'admin_menu', 'hhvp_remove_admin_menu_items' );
-
-/**
- * Remove most menu classes en ids
- * Only current-menu-item remains
- * http://wpsnipp.com/index.php/functions-php/remove-every-class-and-id-from-the-wp_nav_menu/
- */
-add_filter('nav_menu_css_class', 'slnm_css_attributes_filter', 100, 1);
-add_filter('nav_menu_item_id', 'slnm_css_attributes_filter', 100, 1);
-add_filter('page_css_class', 'slnm_css_attributes_filter', 100, 1);
-function slnm_css_attributes_filter($var) {
-	return is_array($var) ? array_intersect($var, array('current-menu-item')) : '';
-}

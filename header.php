@@ -42,8 +42,13 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="mainNavigation" role="navigation">
-			<button class="mainNavigation--toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'slnm' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container' => '', 'menu_class' => 'mainNavigation--menu' ) ); ?>
+			<button class="mainNavigation--toggle" aria-controls="primary-menu" aria-expanded="false"><span class="screenReaderText"><?php esc_html_e( 'Menu', 'slnm' ); ?></span></button>
+			<?php wp_nav_menu( array( 	'theme_location' => 'primary',
+										'menu_id' => 'primary-menu',
+										'container' => '',
+										'menu_class' => 'mainNavigation--menu',
+										'walker' => new SLNM_Walker_Nav_Menu()
+									) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
