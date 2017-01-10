@@ -27,7 +27,7 @@
 	<header id="masthead" class="l-header" role="banner">
 		<div class="branding">
 			<?php
-			if ( is_front_page() && is_home() ) : ?>
+			if ( is_front_page() ) : ?>
 				<h1 class="branding--title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
 				<p class="branding--title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
@@ -50,6 +50,11 @@
 										'walker' => new SLNM_Walker_Nav_Menu()
 									) ); ?>
 		</nav><!-- #site-navigation -->
+
+
+		<button class="searchformToggle" aria-controls="searchform-container" aria-label="<?php esc_html_e( 'Zoeken', 'slnm' ); ?>"></button>
+		<div class="searchOverlay"></div>
+		<div class="searchformContainer" id="searchform-container"><?php echo get_search_form(); ?></div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="l-content">

@@ -1,0 +1,141 @@
+/**
+ * searchform.css
+ *
+ * All searchform related styles
+ *
+ *
+**/
+
+/***************************************** Searchform toggle button */
+.searchformToggle {
+	background-color: #fff;
+	border: 1px solid #000;
+	height: 44px;
+	left: 10px;
+	overflow: auto;
+	position: absolute;
+	top: 10px;
+	width: 44px;
+}
+
+.searchformToggle:before,
+.searchform:after {
+    color: #333;
+    content: "\26B2";
+	display: block;
+	font-size: 40px;
+	font-weight: bold;
+    line-height: 40px;
+	margin: -2px 0 0 -3px;
+	transform: rotate(45deg);
+    width: 40px;
+}
+
+/************************************************** Searchform */
+
+.searchformContainer {
+	display: block;
+    height: 80px;
+    left: 47%;
+    margin-left: -150px;
+    margin-top: -40px;
+    opacity: 0;
+	position: fixed;
+    text-align: center;
+    top: 35%;
+    width: 300px;
+    z-index: -1;
+}
+
+.searchform {
+	position: relative;
+}
+
+.searchform--searchfield {
+    background-color: transparent;
+    border: 1px solid #202020;
+    color: #202020;
+	font-size: 14px;
+	height:30px;
+    width: 240px;
+    text-indent: 5px;
+}
+
+.searchform--searchfield:focus,
+.searchform--searchfield:active {
+	outline: 0 !important;
+}
+
+.searchform--submit {
+	background: none;
+    border: 0;
+    box-shadow: none !important;
+    height: 40px;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+	position: absolute;
+    width: 40px;
+    text-indent: -9999px;
+}
+
+.searchform--submit,
+.searchform:after {
+	position: absolute;
+	padding-left:10px;
+	right: -6px;
+	top: -9px;
+	z-index: 10;
+}
+.searchform:after {
+	z-index: 0;
+}
+
+.searchOverlay {
+	background-color: #fff;
+	background-color: rgba(255,255,255,.95);
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    transition: all .2s ease-in-out;
+    width: 100%;
+    z-index: -1;
+}
+
+.searchOverlay.is-active,
+.searchformContainer.is-active {
+	display: block;
+	opacity: 1;
+	z-index: 99999;
+}
+
+@media screen and (min-width: 768px) {
+
+	.searchformToggle,
+    .searchOverlay {
+		display: none;
+	}
+
+    .searchformContainer {
+		left: auto;
+		opacity: 1;
+		position: absolute;
+		margin: 0;
+		right: 10px;
+		top: 43px;
+		z-index: 10;
+	}
+
+	.searchform--searchfield {
+		width: 100%;
+	}
+
+	.searchform:after {
+		font-size: 31px;
+		right: -3px;
+		top: -8px;
+	}
+
+}

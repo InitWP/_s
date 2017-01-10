@@ -5,11 +5,16 @@
  *
 **/
 
+.branding--title {
+	margin: 0;
+}
+
 .branding--title > a {
 	background: url("../../img/logo-temp.png") no-repeat 50% 0;
 	background-size: contain;
 	display: block;
 	height: 100px;
+	margin: 0 auto;
 	max-width: 195px;
 	text-indent: -9999px;
 }
@@ -20,6 +25,8 @@
 	}
 }
 
-@media screen and (min-width: 1024px) {
-
+@media screen and (min-width: 768px) {
+	.branding--title > a {
+		margin: 0;
+	}
 }
