@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package slnm
+ * @package slnm-base
  */
 
 ?>
@@ -30,7 +30,7 @@
 				edit_post_link(
 					sprintf(
 						/* translators: %s: Name of current post */
-						esc_html__( 'Edit %s', 'slnm' ),
+						esc_html__( 'Edit %s', 'slnm-base' ),
 						the_title( '<span class="screenReaderText">"', '"</span>', false )
 					),
 					'<span class="editLink">',

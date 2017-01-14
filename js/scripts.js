@@ -1,4 +1,4 @@
-var slnmScripts = (function ($) {
+var slnmBaseScripts = (function ($) {
 
 	// On DOM ready
 	$(function () {

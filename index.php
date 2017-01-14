@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package slnm
+ * @package slnm-base
  */
 
 get_header(); ?>

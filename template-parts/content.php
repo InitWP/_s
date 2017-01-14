@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package slnm
+ * @package slnm-base
  */
 
 ?>
@@ -20,7 +20,7 @@
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry--meta">
-			<?php slnm_posted_on(); ?>
+			<?php slnm_base_posted_on(); ?>
 		</div><!-- .entry--meta -->
 		<?php
 		endif; ?>
@@ -30,18 +30,18 @@
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="metaNav">&rarr;</span>', 'slnm' ), array( 'span' => array( 'class' => array() ) ) ),
+				wp_kses( __( 'Continue reading %s <span class="metaNav">&rarr;</span>', 'slnm-base' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screenReaderText">"', '"</span>', false )
 			) );
 
 			wp_link_pages( array(
-				'before' => '<div class="pageLinks">' . esc_html__( 'Pages:', 'slnm' ),
+				'before' => '<div class="pageLinks">' . esc_html__( 'Pages:', 'slnm-base' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry--content -->
 
 	<footer class="entry--footer">
-		<?php slnm_entry_footer(); ?>
+		<?php slnm_base_entry_footer(); ?>
 	</footer><!-- .entry--footer -->
 </article><!-- #post-## -->

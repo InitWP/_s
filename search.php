@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package slnm
+ * @package slnm-base
  */
 
 get_header(); ?>
@@ -16,7 +16,7 @@ get_header(); ?>
 		if ( have_posts() ) : ?>
 
 			<header class="pageHeader">
-				<h1 class="pageHeader--title"><?php printf( esc_html__( 'Search Results for: %s', 'slnm' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="pageHeader--title"><?php printf( esc_html__( 'Search Results for: %s', 'slnm-base' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<?php

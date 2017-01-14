@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package slnm
+ * @package slnm-base
  */
 
 ?>
@@ -15,7 +15,7 @@
 
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry--meta">
-			<?php slnm_posted_on(); ?>
+			<?php slnm_base_posted_on(); ?>
 		</div><!-- .entry--meta -->
 		<?php endif; ?>
 	</header><!-- .entry--header -->
@@ -25,6 +25,6 @@
 	</div><!-- .entry--summary -->
 
 	<footer class="entry--footer">
-		<?php slnm_entry_footer(); ?>
+		<?php slnm_base_entry_footer(); ?>
 	</footer><!-- .entry--footer -->
 </article><!-- #post-## -->

@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package slnm
+ * @package slnm-base
  */
 
 ?><!DOCTYPE html>
@@ -22,7 +22,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="l-site">
-	<a class="skipLink screenReaderText" href="#content"><?php esc_html_e( 'Skip to content', 'slnm' ); ?></a>
+	<a class="skipLink screenReaderText" href="#content"><?php esc_html_e( 'Skip to content', 'slnm-base' ); ?></a>
 
 	<header id="masthead" class="l-header" role="banner">
 		<div class="branding">
@@ -42,17 +42,17 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="mainNavigation" role="navigation">
-			<button class="mainNavigation--toggle" aria-controls="primary-menu" aria-expanded="false"><span class="screenReaderText"><?php esc_html_e( 'Menu', 'slnm' ); ?></span></button>
+			<button class="mainNavigation--toggle" aria-controls="primary-menu" aria-expanded="false"><span class="screenReaderText"><?php esc_html_e( 'Menu', 'slnm-base' ); ?></span></button>
 			<?php wp_nav_menu( array( 	'theme_location' => 'primary',
 										'menu_id' => 'primary-menu',
 										'container' => '',
 										'menu_class' => 'mainNavigation--menu',
-										'walker' => new SLNM_Walker_Nav_Menu()
+										'walker' => new slnm_base_Walker_Nav_Menu()
 									) ); ?>
 		</nav><!-- #site-navigation -->
 
 
-		<button class="searchformToggle" aria-controls="searchform-container" aria-label="<?php esc_html_e( 'Zoeken', 'slnm' ); ?>"></button>
+		<button class="searchformToggle" aria-controls="searchform-container" aria-label="<?php esc_html_e( 'Zoeken', 'slnm-base' ); ?>"></button>
 		<div class="searchOverlay"></div>
 		<div class="searchformContainer" id="searchform-container"><?php echo get_search_form(); ?></div>
 	</header><!-- #masthead -->

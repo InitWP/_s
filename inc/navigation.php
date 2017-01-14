@@ -5,7 +5,7 @@
  * @since 1.0
  * @uses Walker_Nav_Menu
  */
-class SLNM_Walker_Nav_Menu extends Walker_Nav_Menu {
+class slnm_base_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 	/**
 	 * @see Walker_Page::start_lvl()

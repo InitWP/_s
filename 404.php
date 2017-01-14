@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package slnm
+ * @package slnm-base
  */
 
 get_header(); ?>
@@ -14,11 +14,11 @@ get_header(); ?>
 
 			<article class="error404 entry">
 				<header class="entry--header">
-					<h1><?php esc_html_e( 'Oeps! De pagina kan niet worden gevonden.', 'slnm' ); ?></h1>
+					<h1><?php esc_html_e( 'Oeps! De pagina kan niet worden gevonden.', 'slnm-base' ); ?></h1>
 				</header><!-- .entry--header -->
 
 				<div class="entry--content">
-					<p><?php esc_html_e( 'Het lijkt erop dat er niets op deze locatie te vinden is. Misschien kan een zoekactie helpen: ', 'slnm' ); ?></p>
+					<p><?php esc_html_e( 'Het lijkt erop dat er niets op deze locatie te vinden is. Misschien kan een zoekactie helpen: ', 'slnm-base' ); ?></p>
 
 					<?php
 						get_search_form();
