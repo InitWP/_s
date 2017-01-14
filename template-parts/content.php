@@ -33,11 +33,6 @@
 				wp_kses( __( 'Continue reading %s <span class="metaNav">&rarr;</span>', 'slnm-base' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screenReaderText">"', '"</span>', false )
 			) );
-
-			wp_link_pages( array(
-				'before' => '<div class="pageLinks">' . esc_html__( 'Pages:', 'slnm-base' ),
-				'after'  => '</div>',
-			) );
 		?>
 	</div><!-- .entry--content -->
 
