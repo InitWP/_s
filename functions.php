@@ -59,6 +59,14 @@ function slnm_setup() {
 		'caption',
 	) );
 
+	/*
+	 * Add stylesheets with content styles to the TinyMCE editor in WordPress admin
+	 */
+	add_editor_style(array(
+		'./css/base/base.css',
+		'./css/modules/image.css',
+	));
+
 }
 endif;
 add_action( 'after_setup_theme', 'slnm_setup' );
@@ -122,6 +130,7 @@ function slnm_scripts() {
 
 	wp_enqueue_style( 'slnm-module-branding', get_template_directory_uri() . '/css/modules/branding.css' );
 	wp_enqueue_style( 'slnm-module-navigation', get_template_directory_uri() . '/css/modules/navigation.css' );
+	wp_enqueue_style( 'slnm-module-image', get_template_directory_uri() . '/css/modules/image.css' );
 	wp_enqueue_style( 'slnm-module-entry', get_template_directory_uri() . '/css/modules/entry.css' );
 	wp_enqueue_style( 'slnm-module-slider', get_template_directory_uri() . '/css/modules/slider.css' );
 	wp_enqueue_style( 'slnm-module-quote', get_template_directory_uri() . '/css/modules/quote.css' );
@@ -136,6 +145,10 @@ function slnm_scripts() {
 	wp_enqueue_script( 'slnm-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20161227', true );
 	wp_enqueue_script( 'slnm-searchform', get_template_directory_uri() . '/js/searchform.js', array(), '20170110', true );
 	wp_enqueue_script( 'slnm-scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '20161227', true);
+
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 
 }
 add_action( 'wp_enqueue_scripts', 'slnm_scripts' );

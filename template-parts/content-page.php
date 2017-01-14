@@ -11,18 +11,17 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('entry'); ?>>
 	<header class="entry--header">
-		<?php the_title( '<h1 class="entry--title">', '</h1>' ); ?>
+		<?php
+		if ( is_front_page() ) :
+			the_title( '<h2 class="entry--title">', '</h2>' );
+		else :
+			the_title( '<h1 class="entry--title">', '</h1>' );
+		endif;
+		?>
 	</header><!-- .entry--header -->
 
 	<div class="entry--content">
-		<?php
-			the_content();
-
-			wp_link_pages( array(
-				'before' => '<div class="pageLinks">' . esc_html__( 'Pages:', 'slnm' ),
-				'after'  => '</div>',
-			) );
-		?>
+		<?php the_content(); ?>
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>

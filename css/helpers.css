@@ -9,7 +9,8 @@
  # Accessibility
  --------------------------------------------------------------*/
  /* Text meant only for screen readers. */
- .screenReaderText {
+ .screenReaderText,
+ .screen-reader-text {
  	clip: rect(1px, 1px, 1px, 1px);
  	position: absolute !important;
  	height: 1px;
@@ -17,7 +18,8 @@
  	overflow: hidden;
  }
 
- .screenReaderText:focus {
+ .screenReaderText:focus,
+ .screen-reader-text:focus {
  	background-color: #f1f1f1;
  	border-radius: 3px;
  	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
@@ -91,4 +93,16 @@
 .l-content:after,
 .l-footer:after {
 	clear: both;
+}
+
+/*--------------------------------------------------------------
+# WordPress classes
+--------------------------------------------------------------*/
+
+.sticky {
+	display: block;
+}
+
+.bypostauthor {
+	display: block;
 }
