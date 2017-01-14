@@ -24,6 +24,7 @@ Download `slnm-base` from GitHub. The first thing you want to do is copy the `sl
 3. Search for `Text Domain: slnm-base` in style.css.
 4. Search for <code>&nbsp;slnm-base</code> (with a space before it) to capture DocBlocks.
 5. Search for `slnm-base-` to capture prefixed handles.
+6. Search for `slnmBase` to capture prefixed JavaScript.
 
 OR
 
@@ -32,6 +33,7 @@ OR
 * Search for: `Text Domain: slnm-base` and replace with: `Text Domain: megatherium` in style.css.
 * Search for: <code>&nbsp;slnm-base</code> and replace with: <code>&nbsp;Megatherium</code>
 * Search for: `slnm-base-` and replace with: `megatherium-`
+* Search for: `slnmBase` and replace with: `megatherium`
 
 Then, update the stylesheet header in `style.css` with your own information. Next, update or delete this readme.
 
