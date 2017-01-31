@@ -102,23 +102,6 @@ function slnm_base_widgets_init() {
 add_action( 'widgets_init', 'slnm_base_widgets_init' );
 
 /**
- * Remove unused WP additions to HEAD
- *
- */
-// Emoji
-remove_action('wp_head', 'print_emoji_detection_script', 7);
-remove_action('wp_print_styles', 'print_emoji_styles');
-remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-remove_action( 'admin_print_styles', 'print_emoji_styles' );
-add_filter( 'emoji_svg_url', '__return_false' );
-// Bloat
-remove_action('wp_head', 'rsd_link'); //removes EditURI/RSD (Really Simple Discovery) link.
-remove_action('wp_head', 'wlwmanifest_link'); //removes wlwmanifest (Windows Live Writer) link.
-remove_action('wp_head', 'wp_generator'); //removes meta name generator.
-remove_action('wp_head', 'wp_shortlink_wp_head'); //removes shortlink.
-remove_action('wp_head', 'feed_links_extra', 3 );  //removes comments feed.
-
-/**
  * Enqueue scripts and styles.
  */
 function slnm_base_scripts() {
@@ -163,22 +146,3 @@ require get_template_directory() . '/inc/navigation.php';
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Remove unused admin menu-items
- */
-function hhvp_remove_admin_menu_items() {
-
-	//remove_menu_page( 'index.php' );                  //Dashboard
-	remove_menu_page( 'edit.php' );                   //Posts
-	//remove_menu_page( 'upload.php' );                 //Media
-	//remove_menu_page( 'edit.php?post_type=page' );    //Pages
-	remove_menu_page( 'edit-comments.php' );          //Comments
-	//remove_menu_page( 'themes.php' );                 //Appearance
-	//remove_menu_page( 'plugins.php' );                //Plugins
-	//remove_menu_page( 'users.php' );                  //Users
-	//remove_menu_page( 'tools.php' );                  //Tools
-	//remove_menu_page( 'options-general.php' );        //Settings
-
-}
-add_action( 'admin_menu', 'hhvp_remove_admin_menu_items' );
