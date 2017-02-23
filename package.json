@@ -2,7 +2,8 @@
 	"name": "SLNM Base",
 	"type": "theme",
 	"version": "0.1.0",
-	"description": "Numeric pagination for pages, archives and search results",
+	"author": "Sjoerd Lohuis Nieuwe Media",
+	"description": "Custom starter theme",
 	"tools": {
 		"renameTheme": {},
 		"addExtraThemeFolders": {},
