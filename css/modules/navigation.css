@@ -120,6 +120,7 @@
 
 .mainNavigation--subMenu--menuItem {
 	border-top: 1px solid #ccc;
+	position: relative;
 }
 
 /******************************************************************************* Media Queries */
@@ -163,14 +164,23 @@
 		outline: none;
 	}
 
-	.mainNavigation--menuItem:hover .mainNavigation--subMenu,
-	.mainNavigation--subMenu.is-active {
+	.mainNavigation--subMenu .mainNavigation--subMenuToggle {
+		display: none;
+	}
+
+	.mainNavigation--menuItem:hover > .mainNavigation--subMenu,
+	.mainNavigation--menuItem > .mainNavigation--subMenu.is-active {
 		background: #fff;
 		display: block;
 		min-width: 200px;
 		position: absolute;
 		top: 47px;
 		z-index: 100;
+	}
+
+	.mainNavigation--menuItem:hover ul .mainNavigation--subMenu {
+		display: block;
+		position: static;
 	}
 
 	.mainNavigation--menuItem:last-child .mainNavigation--subMenu {
