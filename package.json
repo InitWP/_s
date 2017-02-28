@@ -5,7 +5,17 @@
 	"author": "Sjoerd Lohuis Nieuwe Media",
 	"description": "Custom starter theme",
 	"tools": {
-		"renameTheme": {},
+		"renameTheme": {
+			"currentThemeFolderName": "slnm-base-master",
+			"namespaceFindAndReplace": [
+				"\"'slnm-base'\"",
+				"'slnm_base_'",
+				"' slnm-base'",
+				"'slnm-base-'",
+				"'\t slnm-base'",
+				"'slnmBase'"
+			]
+		},
 		"addExtraThemeFolders": {},
 		"addImageSizes": {}
 	}
