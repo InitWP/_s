@@ -8,7 +8,7 @@
 		"renameTheme": {
 			"currentThemeFolderName": "slnm-base-master",
 			"namespaceFindAndReplace": [
-				"\"'slnm-base'\"",
+				"'slnm-base'",
 				"slnm_base_",
 				" slnm-base",
 				"slnm-base-",
