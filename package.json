@@ -8,15 +8,15 @@
 		"renameTheme": {
 			"currentThemeFolderName": "slnm-base-master",
 			"namespaceFindAndReplace": [
-				"\"'slnm-base'\"",
-				"'slnm_base_'",
-				"' slnm-base'",
-				"'slnm-base-'",
-				"'\tslnm-base'",
-				"'slnmBase'"
+				"'slnm-base'",
+				"slnm_base_",
+				" slnm-base",
+				"slnm-base-",
+				"\tslnm-base",
+				"slnmBase"
 			]
 		},
-		"addExtraThemeFolders": {},
-		"addImageSizes": {}
+		"addImageSizes": {},
+		"addExtraThemeFolders": {}
 	}
 }
