@@ -143,13 +143,3 @@ add_action( 'wp_enqueue_scripts', 'slnm_base_scripts' );
 
 
 /****************** Include theme modules php files ******************/
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom modules for this theme.
- */
-require get_template_directory() . '/inc/navigation.php';

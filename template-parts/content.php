@@ -37,6 +37,6 @@
 	</div><!-- .entry--content -->
 
 	<footer class="entry--footer">
-		<?php slnm_base_entry_footer(); ?>
+		
 	</footer><!-- .entry--footer -->
 </article><!-- #post-## -->
