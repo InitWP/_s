@@ -6,7 +6,6 @@
 	"description": "Custom starter theme",
 	"tools": {
 		"renameTheme": {
-			"currentThemeFolderName": "slnm-base-master",
 			"namespaceFindAndReplace": [
 				"'slnm-base'",
 				"slnm_base_",
