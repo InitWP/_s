@@ -1,7 +1,7 @@
 var slnmBaseScripts = (function ($) {
 
-	// On DOM ready
 	$(function () {
+		// On DOM ready
 
 	});
 
