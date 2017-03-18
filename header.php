@@ -40,15 +40,17 @@
 			endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="mainNavigation" role="navigation">
-			<button class="mainNavigation--toggle" aria-controls="primary-menu" aria-expanded="false"><span class="screenReaderText"><?php esc_html_e( 'Menu', 'slnm-base' ); ?></span></button>
-			<?php wp_nav_menu( array( 	'theme_location' => 'primary',
-										'menu_id' => 'primary-menu',
-										'container' => '',
-										'menu_class' => 'mainNavigation--menu',
-										'walker' => new slnm_base_Walker_Nav_Menu()
-									) ); ?>
-		</nav><!-- #site-navigation -->
+		<?php if (has_nav_menu('primary')) { ?>
+			<nav id="site-navigation" class="mainNavigation" role="navigation">
+				<button class="mainNavigation--toggle" aria-controls="primary-menu" aria-expanded="false"><span class="screenReaderText"><?php esc_html_e( 'Menu', 'slnm-base' ); ?></span></button>
+				<?php wp_nav_menu( array( 	'theme_location' => 'primary',
+											'menu_id' => 'primary-menu',
+											'container' => '',
+											'menu_class' => 'mainNavigation--menu',
+											'walker' => new slnm_base_Walker_Nav_Menu()
+										) ); ?>
+			</nav><!-- #site-navigation -->
+		<?php } ?>
 
 
 		<button class="searchformToggle" aria-controls="searchform-container" aria-label="<?php esc_html_e( 'Zoeken', 'slnm-base' ); ?>"></button>
