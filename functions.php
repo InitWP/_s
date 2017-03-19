@@ -143,3 +143,8 @@ add_action( 'wp_enqueue_scripts', 'slnm_base_scripts' );
 
 
 /****************** Include theme modules php files ******************/
+
+/**
+ * Clean SMACSS classes including active classes for custom post type menu items, parents and ancestors
+ */
+require get_template_directory() . '/inc/clean-navigation-css-classes.php';
