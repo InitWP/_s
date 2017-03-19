@@ -32,7 +32,9 @@ var slnmBaseNavigation = (function ($) {
 		// When a menu link is clicked close the menu and reset the state
 		$('a', mainMenu).on('click', function () {
 			buttons.removeClass('is-active');
-			setNavigationState(button, menus);
+			if ($.type(button) !== 'undefined') {
+				setNavigationState(button, menus);
+			}
 		});
 
 		// When a menu link is focused or blurred, toggle the focus class for accessibility
