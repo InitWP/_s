@@ -10,23 +10,10 @@
    <div id="primary" class="l-primaryContent">
 		<main id="main" class="l-main" role="main">
 			<?php
-			$args = array(
-				'posts_per_page'	=> -1,
-				'post_type'			=> 'page',
-				'post_parent'		=> '3',
-				'orderby'			=> 'menu_order',
-				'order'				=> 'ASC'
-			);
-			$posts = get_posts($args);
-
-			if ($posts) {
-				// Loop through the posts
-				foreach ( $posts as $post ) : setup_postdata( $post );
-
-				endforeach;
-			}
+			/************************************* Custom Blocks *************************************/
+			
+			/************************************* /Custom Blocks *************************************/
             ?>
-
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
