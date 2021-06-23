@@ -52,6 +52,8 @@ function slnm_base_setup() {
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
+		'script',
+		'style',
 		'search-form',
 		'comment-form',
 		'comment-list',
@@ -63,9 +65,9 @@ function slnm_base_setup() {
 	 * Add stylesheets with content styles to the TinyMCE editor in WordPress admin
 	 */
 	add_editor_style(array(
-		'./css/base/base.css',
-		'./css/_tinymce.css',
-		'./css/modules/image.css',
+		get_template_directory_uri() . '/css/base/base.css?20210610',
+		get_template_directory_uri() . '/css/modules/image.css?20210610',
+		get_template_directory_uri() . '/css/_tinymce.css?20210611',
 	));
 
 }
@@ -79,17 +81,17 @@ add_action( 'after_setup_theme', 'slnm_base_setup' );
  *
  * @global int $content_width
  */
-function slnm_base_content_width() {
+/*function slnm_base_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'slnm_base_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'slnm_base_content_width', 0 );
+add_action( 'after_setup_theme', 'slnm_base_content_width', 0 ); */
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function slnm_base_widgets_init() {
+/*function slnm_base_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'slnm-base' ),
 		'id'            => 'sidebar-1',
@@ -100,7 +102,7 @@ function slnm_base_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'slnm_base_widgets_init' );
+add_action( 'widgets_init', 'slnm_base_widgets_init' ); */
 
 /**
  * Enqueue scripts and styles.
