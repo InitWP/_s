@@ -79,15 +79,17 @@ add_action( 'after_setup_theme', 'slnm_base_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
+ * Using this feature you can set the maximum allowed width for any content in the theme,
+ * like oEmbeds and images added to posts.
  *
  * Priority 0 to make it available to lower priority callbacks.
  *
  * @global int $content_width
  */
-/*function slnm_base_content_width() {
+function slnm_base_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'slnm_base_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'slnm_base_content_width', 0 ); */
+add_action( 'after_setup_theme', 'slnm_base_content_width', 0 );
 
 /**
  * Register widget area.
