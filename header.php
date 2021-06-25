@@ -38,7 +38,7 @@
 				<p class="branding--description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 			<?php
 			endif; ?>
-		</div><!-- .site-branding -->
+		</div><!-- .branding -->
 
 		<?php if (has_nav_menu('primary')) { ?>
 			<nav id="site-navigation" class="mainNavigation" role="navigation">
@@ -57,3 +57,9 @@
 		<div class="searchOverlay"></div>
 		<div class="searchformContainer" id="searchform-container"><?php echo get_search_form(); ?></div>
 	</header><!-- #masthead -->
+
+	<?php
+	if ( function_exists('yoast_breadcrumb') && !is_front_page() ) {
+		yoast_breadcrumb( '<div id="breadcrumbs" class="l-container breadcrumbs">','</div>' );
+	}
+ 	?>
