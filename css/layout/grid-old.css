@@ -1,0 +1,101 @@
+/**
+ * grid.css
+ *
+ * Custom grid styles as needed
+ *
+**/
+
+/***************** grid basic setup styles */
+
+[class*="grid-"] {
+	display: block;
+	padding: 0;
+}
+
+[class*="grid-"]:before,
+[class*="grid-"]:after {
+	content: " ";
+	display: table;
+}
+
+[class*="grid-"]:after {
+	clear: both;
+}
+
+[class*=grid-] > * {
+	display: block;
+	list-style: none;
+	float: left;
+	height: auto;
+	padding: 0;
+	width: 100%;
+}
+
+.grid-3 > * {
+	padding: 10px;
+}
+
+@media screen and (min-width: 400px) {
+
+	/***************** grid column styles */
+
+	.grid-3 > * {
+		width: 50%;
+	}
+
+}
+
+@media screen and (min-width: 768px) {
+
+	/***************** grid column styles */
+
+	.grid-2 > * {
+		width: 50%;
+	}
+
+	.grid-2 > *:nth-of-type(n) {
+	  clear: none;
+	}
+
+	.grid-2 > *:nth-of-type(2n+1) {
+	  clear: both;
+	}
+
+	.grid-3 > * {
+		width: 33.33333%;
+	}
+
+	.grid-3 > *:nth-of-type(n) {
+	  clear: none;
+	}
+
+	.grid-3 > *:nth-of-type(3n+1) {
+	  clear: both;
+	}
+
+	/***************** equal vertical columns */
+
+	.grid-equalColumns {
+		display: table;
+	}
+
+	.grid-equalColumns > * {
+		display: table-cell;
+		float: none;
+		padding: 0 20px;
+	}
+
+	.grid-equalColumns > *:first-child {
+		padding-left: 0;
+	}
+
+}
+
+@media screen and (min-width: 1024px) {
+
+	.grid-equalColumns > * {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	
+}

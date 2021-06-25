@@ -4,7 +4,7 @@
  * Sections, major components and containing elements
  * Layouts specify widths and margins
  *
- * - Grid systems have their own stylesheet in layout
+ * - Grid systems have their own stylesheet
  * - Mostly use single class names
  * - No use of ID's
  * - No use of !important
@@ -12,20 +12,19 @@
  *
 **/
 
-.l-site {
+.l-container {
 	margin: 0 auto;
-	padding: 0 10px 10px;
+	padding: 0 10px;
 	position: relative;
 }
 
 @media screen and (min-width: 768px) {
-	.l-site {
-		padding: 30px 10px 10px;
-	}
+
 }
 
 @media screen and (min-width: 1024px) {
-	.l-site {
+
+	.l-container {
 		max-width: 1170px;
 	}
 

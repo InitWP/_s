@@ -11,8 +11,8 @@
 
 <article class="noResults entry">
 	<header class="entry--header">
-		<h1 class="entry--title"><?php esc_html_e( 'Nothing Found', 'slnm-base' ); ?></h1>
-	</header><!-- .page-header -->
+		<h1 class="entry--title"><?php esc_html_e( 'Niks gevonden', 'slnm-base' ); ?></h1>
+	</header><!-- .entry--header -->
 
 	<div class="entry--content">
 		<?php
@@ -22,13 +22,13 @@
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'slnm-base' ); ?></p>
+			<p><?php esc_html_e( 'Er is niets gevonden voor deze zoekterm. Probeer het opnieuw.', 'slnm-base' ); ?></p>
 			<?php
 				get_search_form();
 
 		else : ?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'slnm-base' ); ?></p>
+			<p><?php esc_html_e( 'Er is niets gevonden.', 'slnm-base' ); ?></p>
 			<?php
 				get_search_form();
 

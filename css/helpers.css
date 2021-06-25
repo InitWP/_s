@@ -5,94 +5,68 @@
  *
  */
 
- /*--------------------------------------------------------------
- # Accessibility
- --------------------------------------------------------------*/
- /* Text meant only for screen readers. */
- .screenReaderText,
- .screen-reader-text {
- 	clip: rect(1px, 1px, 1px, 1px);
- 	position: absolute !important;
- 	height: 1px;
- 	width: 1px;
- 	overflow: hidden;
- }
-
- .screenReaderText:focus,
- .screen-reader-text:focus {
- 	background-color: #f1f1f1;
- 	border-radius: 3px;
- 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
- 	clip: auto !important;
- 	color: #21759b;
- 	display: block;
- 	font-size: 14px;
- 	font-size: 0.875rem;
- 	font-weight: bold;
- 	height: auto;
- 	left: 5px;
- 	line-height: normal;
- 	padding: 15px 23px 14px;
- 	text-decoration: none;
- 	top: 5px;
- 	width: auto;
- 	z-index: 100000; /* Above WP toolbar. */
- }
-
- /* Do not show the outline on the skip link target. */
- .l-content[tabindex="-1"]:focus {
- 	outline: 0;
- }
-
- /*--------------------------------------------------------------
- # Alignments
- --------------------------------------------------------------*/
- .alignleft {
- 	display: inline;
- 	float: left;
- 	margin-right: 1.5em;
- }
-
- .alignright {
- 	display: inline;
- 	float: right;
- 	margin-left: 1.5em;
- }
-
- .aligncenter {
- 	clear: both;
- 	display: block;
- 	margin-left: auto;
- 	margin-right: auto;
- }
-
 /*--------------------------------------------------------------
-# Clearings
+# Accessibility
 --------------------------------------------------------------*/
-.clear:before,
-.clear:after,
-.entry--content:before,
-.entry--content:after,
-.comment-content:before,
-.comment-content:after,
-.l-header:before,
-.l-header:after,
-.l-content:before,
-.l-content:after,
-.l-footer:before,
-.l-footer:after {
-	content: "";
-	display: table;
-	table-layout: fixed;
+/* Text meant only for screen readers. */
+.screenReaderText,
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
 }
 
-.clear:after,
-.entry--content:after,
-.comment-content:after,
-.l-header:after,
-.l-content:after,
-.l-footer:after {
+.screenReaderText:focus,
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 0.875rem;
+	font-weight: 700;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
+
+/* Do not show the outline on the skip link target. */
+.l-content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
 	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /*--------------------------------------------------------------
@@ -101,6 +75,10 @@
 
 .sticky {
 	display: block;
+}
+
+.comment-content a {
+	word-wrap: break-word;
 }
 
 .bypostauthor {

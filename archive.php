@@ -9,43 +9,41 @@
 
 get_header(); ?>
 
-	<div id="primary" class="l-primaryContent">
-		<main id="main" class="l-main" role="main">
+	<main id="main" class="l-main l-container">
+
+	<?php
+	if ( have_posts() ) : ?>
+
+		<header class="pageHeader">
+			<?php
+				the_archive_title( '<h1 class="pageHeader--title">', '</h1>' );
+				the_archive_description( '<div class="pageHeader--description">', '</div>' );
+			?>
+		</header><!-- .page-header -->
 
 		<?php
-		if ( have_posts() ) : ?>
+		/* Start the Loop */
+		while ( have_posts() ) : the_post();
 
-			<header class="pageHeader">
-				<?php
-					the_archive_title( '<h1 class="pageHeader--title">', '</h1>' );
-					the_archive_description( '<div class="pageHeader--description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+			/*
+			 * Include the Post-Type-specific template for the content.
+			 * If you want to override this in a child theme, then include a file
+			 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+			 */
+			get_template_part( 'template-parts/content', get_post_type() );
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+		endwhile;
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+		the_posts_navigation();
 
-			endwhile;
+	else :
 
-			the_posts_navigation();
+		get_template_part( 'template-parts/content', 'none' );
 
-		else :
+	endif; ?>
 
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	</main><!-- #main -->
 
 <?php
-get_sidebar();
+//get_sidebar();
 get_footer();

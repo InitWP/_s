@@ -11,11 +11,9 @@
 
 ?>
 
-	</div><!-- #content -->
-
 	<footer id="footer" class="l-footer">
 
-	</footer><!-- #colophon -->
+	</footer><!-- #footer -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

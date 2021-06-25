@@ -9,21 +9,21 @@
  * @package slnm-base
  */
 
-?><!DOCTYPE html>
+?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
 
-<?php wp_head(); ?>
+	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="l-site">
 	<a class="skipLink screenReaderText" href="#content"><?php esc_html_e( 'Skip to content', 'slnm-base' ); ?></a>
 
-	<header id="masthead" class="l-header" role="banner">
+	<header id="masthead" class="l-header l-container">
 		<div class="branding">
 			<?php
 			if ( is_front_page() ) : ?>
@@ -57,5 +57,3 @@
 		<div class="searchOverlay"></div>
 		<div class="searchformContainer" id="searchform-container"><?php echo get_search_form(); ?></div>
 	</header><!-- #masthead -->
-
-	<div id="content" class="l-content">

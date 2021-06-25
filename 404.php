@@ -9,26 +9,24 @@
 
 get_header(); ?>
 
-	<div id="primary" class="l-primaryContent">
-		<main id="main" class="l-main" role="main">
+	<main id="main" class="l-main l-container">
 
-			<article class="error404 entry">
-				<header class="entry--header">
-					<h1><?php esc_html_e( 'Oeps! De pagina kan niet worden gevonden.', 'slnm-base' ); ?></h1>
-				</header><!-- .entry--header -->
+		<article class="error404 entry">
+			<header class="entry--header">
+				<h1><?php esc_html_e( 'Oeps! De pagina kan niet worden gevonden.', 'slnm-base' ); ?></h1>
+			</header><!-- .entry--header -->
 
-				<div class="entry--content">
-					<p><?php esc_html_e( 'Het lijkt erop dat er niets op deze locatie te vinden is. Misschien kan een zoekactie helpen: ', 'slnm-base' ); ?></p>
+			<div class="entry--content">
+				<p><?php esc_html_e( 'Het lijkt erop dat er niets op deze locatie te vinden is. Misschien kan een zoekactie helpen: ', 'slnm-base' ); ?></p>
 
-					<?php
-						get_search_form();
-					?>
+				<?php
+					get_search_form();
+				?>
 
-				</div><!-- .entry--content -->
-			</article><!-- .error404 -->
+			</div><!-- .entry--content -->
+		</article><!-- .error404 -->
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	</main><!-- #main -->
 
 <?php
 get_footer();

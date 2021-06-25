@@ -24,7 +24,4 @@
 		<?php the_excerpt(); ?>
 	</div><!-- .entry--summary -->
 
-	<footer class="entry--footer">
-		
-	</footer><!-- .entry--footer -->
-</article><!-- #post-## -->
+</article><!-- #post-<?php the_ID(); ?> -->
